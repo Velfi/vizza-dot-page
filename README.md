@@ -66,4 +66,4 @@ npm run build && npm run deploy
 
 Page screenshots live under `public/assets/screenshots/` and are referenced directly from the React app. Gallery images are lazy-loaded and given fixed intrinsic dimensions to avoid layout shift.
 
-The current page uses available Particle Life, Slime Mold, and Flow screenshots plus the finished Steam capsule and library artwork in `public/assets/steam/`. See `ASSET_SHOPPING_LIST.md` for remaining trailer and capture recommendations.
+The current page uses available Particle Life, Slime Mold, Flow, Pellets, Voronoi, Moiré, Vectors, Primordial, and Gray-Scott screenshots plus the finished Steam capsule and library artwork in `public/assets/steam/`. See `ASSET_SHOPPING_LIST.md` for remaining trailer and capture recommendations.

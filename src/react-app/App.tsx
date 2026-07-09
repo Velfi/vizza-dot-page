@@ -7,6 +7,7 @@ const siteUrl = "https://vizza.page";
 const particleBase =
   "/assets/screenshots/particle-life-random-center-50-clean/webp";
 const slimeBase = "/assets/screenshots/slime-mold-presets-ui-hidden/webp";
+const grayScottBase = "/assets/screenshots/gray-scott/webp";
 const flowBase = "/assets/screenshots/flow-field-random-noise-50-clean/webp";
 const pelletsBase = "/assets/screenshots/pellets-random-10-clean/webp";
 const voronoiBase = "/assets/screenshots/voronoi-ca-random-10-clean/webp";
@@ -40,15 +41,25 @@ const mediaHighlights = [
     height: 4000,
   },
   {
-    title: "Flow Field",
-    src: `${flowBase}/25-flow-field-random-noise.webp`,
-    alt: "Flow-field particle trails forming a dense multicolor current map",
-    width: 6000,
-    height: 4000,
+    title: "Gray-Scott",
+    src: `${grayScottBase}/03-gray-scott-maze-stripes.webp`,
+    alt: "Gray-Scott reaction-diffusion simulation forming dense pink and yellow maze stripes",
+    width: 3456,
+    height: 2168,
   },
 ];
 
-const simulations = [
+type Simulation = {
+  name: string;
+  body: string;
+  src?: string;
+  alt?: string;
+  width?: number;
+  height?: number;
+  variant?: string;
+};
+
+const simulations: Simulation[] = [
   {
     name: "Slime Mold",
     body: "Make branching maps, fake roots, transit-diagram nonsense, and backgrounds that grow across the screen.",
@@ -58,7 +69,10 @@ const simulations = [
   {
     name: "Gray-Scott",
     body: "Grow spots, stripes, bubbles, and soft organic textures.",
-    variant: "reaction",
+    src: `${grayScottBase}/02-gray-scott-cells.webp`,
+    alt: "Gray-Scott reaction-diffusion simulation with glowing blue cell-like spots on a dark field",
+    width: 3456,
+    height: 2168,
   },
   {
     name: "Particle Life",
@@ -187,7 +201,7 @@ function App() {
             <h1 id="hero-title">
               Is it a game?<br/>
               A screensaver?<br/>
-              A psychedlic trip into a digital wonderland?<br/>
+              A psychedelic trip into a digital wonderland?<br/>
               You decide!
             </h1>
             <p><sub><em>It's free so all you have to lose is your time!</em></sub></p>
@@ -278,9 +292,9 @@ function App() {
                 {simulation.src ? (
                   <img
                     src={simulation.src}
-                    alt={simulation.alt}
-                    width="6000"
-                    height="4000"
+                    alt={simulation.alt ?? ""}
+                    width={simulation.width ?? 6000}
+                    height={simulation.height ?? 4000}
                     loading="lazy"
                     decoding="async"
                   />

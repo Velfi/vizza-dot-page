@@ -10,13 +10,14 @@ https://partner.steamgames.com/doc/store/assets
 
 - Trailer poster image or trailer embed URL for the gallery/media slot.
 - Public Steam store availability for `https://store.steampowered.com/app/4945920`; the page now links to it with fallback copy because it may not resolve until Valve publishes it.
-- Captured screenshots or GIFs for Gray-Scott and Gradient Editor. Gray-Scott is intentionally skipped for now while the implementation is checked.
+- Captured screenshots or GIFs for Gradient Editor.
 
 ## Added To This Page
 
 - Particle Life WebPs from `public/assets/screenshots/particle-life-random-center-50-clean/webp/`.
 - Slime Mold preset WebPs from `public/assets/screenshots/slime-mold-presets-ui-hidden/webp/`.
 - Flow WebPs from `public/assets/screenshots/flow-field-random-noise-50-clean/webp/`.
+- Gray-Scott WebPs from `public/assets/screenshots/gray-scott/webp/`.
 - Pellets WebPs from `public/assets/screenshots/pellets-random-10-clean/webp/`.
 - Voronoi Cellular Automata WebPs from `public/assets/screenshots/voronoi-ca-random-10-clean/webp/`.
 - Moiré WebPs from `public/assets/screenshots/moire-random-10-clean/webp/`.
