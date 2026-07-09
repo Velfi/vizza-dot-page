@@ -1,0 +1,15 @@
+{
+	"name": "Vizza",
+	"short_name": "Vizza",
+	"description": "A desktop garden for making moving wallpapers, loops, backdrops, and visual experiments.",
+	"icons": [
+		{
+			"src": "/icon_256.png",
+			"sizes": "256x256",
+			"type": "image/png"
+		}
+	],
+	"theme_color": "#08090d",
+	"background_color": "#08090d",
+	"display": "standalone"
+}
