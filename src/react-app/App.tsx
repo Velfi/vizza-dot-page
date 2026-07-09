@@ -1,197 +1,405 @@
 import "./App.css";
 
-const particleBase = "/assets/screenshots/particle-life-random-center-50-clean/webp";
+const steamUrl = "https://store.steampowered.com/app/4945920";
+const githubUrl = "https://github.com/Velfi/vizza-dot-page";
+const siteUrl = "https://vizza.page";
+
+const particleBase =
+  "/assets/screenshots/particle-life-random-center-50-clean/webp";
 const slimeBase = "/assets/screenshots/slime-mold-presets-ui-hidden/webp";
+const flowBase = "/assets/screenshots/flow-field-random-noise-50-clean/webp";
+const pelletsBase = "/assets/screenshots/pellets-random-10-clean/webp";
+const voronoiBase = "/assets/screenshots/voronoi-ca-random-10-clean/webp";
+const moireBase = "/assets/screenshots/moire-random-10-clean/webp";
+const vectorsBase = "/assets/screenshots/vectors-random-10-clean/webp";
+const primordialBase = "/assets/screenshots/primordial-random-10-clean/webp";
+const steamBase = "/assets/steam";
 
-const heroImage = `${particleBase}/44-particle-life-random-center.webp`;
-const capsuleImage = `${particleBase}/40-particle-life-random-center.webp`;
+const steamAssets = {
+  pageBackground: `${steamBase}/store_page_background.png`,
+  heroLogo: `${steamBase}/library_logo_transparent.png`,
+  storeCapsuleMain: `${steamBase}/store_capsule_main.png`,
+  storeCapsuleVertical: `${steamBase}/store_capsule_vertical.png`,
+};
 
-const productDetails = [
-	{
-		title: "Reactive particle worlds",
-		body: "Particle Life produces dense, self-organizing species fields from randomized attraction and repulsion rules.",
-	},
-	{
-		title: "Organic simulation presets",
-		body: "Slime Mold presets generate branching trails, cellular blooms, and high-contrast growth patterns.",
-	},
-	{
-		title: "Built for visual exploration",
-		body: "The page now leads with captured simulation imagery while the Steam wishlist link remains staged.",
-	},
+const heroImage = steamAssets.pageBackground;
+
+const mediaHighlights = [
+  {
+    title: "Vizza",
+    src: steamAssets.storeCapsuleMain,
+    alt: "Vizza Steam capsule key art with the Vizza wordmark over colorful particles",
+    width: 1232,
+    height: 706,
+  },
+  {
+    title: "Particle Life",
+    src: `${particleBase}/44-particle-life-random-center.webp`,
+    alt: "Particle Life simulation forming a bright clustered field of colored particles on black",
+    width: 6000,
+    height: 4000,
+  },
+  {
+    title: "Flow Field",
+    src: `${flowBase}/25-flow-field-random-noise.webp`,
+    alt: "Flow-field particle trails forming a dense multicolor current map",
+    width: 6000,
+    height: 4000,
+  },
 ];
 
-const gallerySlots = [
-	{
-		label: "Particle Life",
-		src: `${particleBase}/44-particle-life-random-center.webp`,
-		ratio: "wide",
-	},
-	{
-		label: "Slime Mold",
-		src: `${slimeBase}/12-venom.webp`,
-		ratio: "square",
-	},
-	{
-		label: "Particle Life",
-		src: `${particleBase}/41-particle-life-random-center.webp`,
-		ratio: "tall",
-	},
+const simulations = [
+  {
+    name: "Slime Mold",
+    body: "Make branching maps, fake roots, transit-diagram nonsense, and backgrounds that grow across the screen.",
+    src: `${slimeBase}/08-healthy-fungus.webp`,
+    alt: "Slime Mold simulation creating green luminous clusters inside a dark web of trails",
+  },
+  {
+    name: "Gray-Scott",
+    body: "Grow spots, stripes, bubbles, and soft organic textures.",
+    variant: "reaction",
+  },
+  {
+    name: "Particle Life",
+    body: "Find swarms, clusters, orbiting bits, and little moving systems for ambient loops.",
+    src: `${particleBase}/43-particle-life-random-center.webp`,
+    alt: "Particle Life simulation with dense pastel particle species moving in a dark field",
+  },
+  {
+    name: "Flow Field",
+    body: "Paint currents, smoke trails, and motion backdrops that point somewhere.",
+    src: `${flowBase}/11-flow-field-random-noise.webp`,
+    alt: "Flow-field simulation with purple and magenta trails curling into a vortex",
+  },
+  {
+    name: "Pellets",
+    body: "Play with digital particles. Throw them around and watch the waves that form.",
+    src: `${pelletsBase}/06-pellets-random.webp`,
+    alt: "Pellets simulation with dense multicolor particles scattered across a dark field",
+  },
+  {
+    name: "Voronoi",
+    body: "Make map-like cells, stained-glass regions, and crisp animated borders.",
+    src: `${voronoiBase}/03-voronoi-ca-random.webp`,
+    alt: "Voronoi simulation forming bright green and purple polygonal regions",
+  },
+  {
+    name: "Moire",
+    body: "Use layered waves for optical shimmer, interference bands, and moody moving texture.",
+    src: `${moireBase}/08-moire-random.webp`,
+    alt: "Moire simulation with soft blue, green, and red interference swirls",
+  },
+  {
+    name: "Vectors",
+    body: "Turn direction fields into dense line textures, sketches, and readable motion maps.",
+    src: `${vectorsBase}/08-vectors-random.webp`,
+    alt: "Vector field simulation made of dense pale strokes on a dark background",
+  },
+  {
+    name: "Primordial",
+    body: "Build clustering particle clouds, rings, swarms, and colony-like motion.",
+    src: `${primordialBase}/04-primordial-random.webp`,
+    alt: "Primordial particle simulation forming a dense pink and yellow particle field",
+  },
+  {
+    name: "Gradient Editor",
+    body: "Make and save color schemes you can reuse across simulations.",
+    variant: "gradient",
+  },
 ];
 
-const showcaseImages = [
-	{ label: "Particle Life", src: `${particleBase}/43-particle-life-random-center.webp` },
-	{ label: "Particle Life", src: `${particleBase}/39-particle-life-random-center.webp` },
-	{ label: "Slime Mold", src: `${slimeBase}/02-firecracker-trees.webp` },
-	{ label: "Slime Mold", src: `${slimeBase}/06-net.webp` },
-	{ label: "Particle Life", src: `${particleBase}/36-particle-life-random-center.webp` },
-	{ label: "Slime Mold", src: `${slimeBase}/08-healthy-fungus.webp` },
-	{ label: "Particle Life", src: `${particleBase}/32-particle-life-random-center.webp` },
-	{ label: "Slime Mold", src: `${slimeBase}/11-cascades.webp` },
+const funReasons = [
+  {
+    title: "Find a backdrop",
+    body: "Make something for a second monitor, stream scene, projection, or desktop wallpaper.",
+  },
+  {
+    title: "Record a clip",
+    body: "When a scene lands, capture the motion instead of trying to describe it.",
+  },
+  {
+    title: "Save the recipe",
+    body: "Keep the presets and palettes that work so you can come back to them later.",
+  },
+  {
+    title: "Let it run",
+    body: "Leave a screen doing something while you work, listen, think, or zone out.",
+  },
 ];
 
-const launchNotes = ["Steam page pending", "Wishlist link pending", "Trailer slot ready"];
+const platforms = ["macOS", "Windows"];
 
-const specifications = [
-	["Platform", "Steam"],
-	["Store CTA", "Coming Soon"],
-	["Wishlist link", "Pending Steam store URL"],
-	["Screenshots", "Particle Life and Slime Mold"],
-];
+function SteamCta({ className = "" }: { className?: string }) {
+  return (
+    <a
+      className={`button button-primary ${className}`}
+      href={steamUrl}
+      rel="noreferrer"
+      target="_blank"
+    >
+      Open Steam page
+    </a>
+  );
+}
 
 function App() {
-	return (
-		<main className="page">
-			<header className="topbar" aria-label="Primary navigation">
-				<a className="brand" href="#top" aria-label="Vizza home">
-					<span className="brand-mark">V</span>
-					<span>Vizza</span>
-				</a>
-				<nav className="nav-links" aria-label="Product sections">
-					<a href="#details">Details</a>
-					<a href="#gallery">Gallery</a>
-					<a href="#buy">Reserve</a>
-				</nav>
-			</header>
+  return (
+    <div className="page">
+      <header className="site-header" aria-label="Primary navigation">
+        <a className="brand" href="#top" aria-label="Vizza home">
+          <span className="brand-mark" aria-hidden="true">
+            V
+          </span>
+          <span className="brand-name">Vizza</span>
+        </a>
+        <nav className="nav-links" aria-label="Product sections">
+          <a href="#about">What it is</a>
+          <a href="#simulations">Things inside</a>
+          <a href="#support">Platforms</a>
+        </nav>
+      </header>
 
-			<section className="hero" id="top" aria-labelledby="hero-title">
-				<div className="hero-copy">
-					<p className="eyebrow">Generative simulation suite</p>
-					<h1 id="hero-title">Vizza</h1>
-					<p className="hero-lede">
-						A visual playground of reactive particles, branching slime trails,
-						and simulation presets, coming soon to Steam.
-					</p>
-					<div className="hero-actions" aria-label="Primary actions">
-						<button className="button button-primary steam-button" type="button" disabled>
-							<span className="steam-label">Steam</span>
-							Coming Soon
-						</button>
-						<a className="button button-secondary" href="#gallery">
-							View gallery
-						</a>
-					</div>
-				</div>
+      <main>
+        <section className="hero" id="top" aria-labelledby="hero-title">
+          <figure className="hero-backdrop">
+            <img
+              src={heroImage}
+              alt="Vizza particle simulation artwork with green, blue, and yellow clusters"
+              width="1438"
+              height="810"
+              loading="eager"
+              decoding="async"
+            />
+          </figure>
 
-				<figure className="hero-visual" aria-label="Particle Life simulation screenshot">
-					<img src={heroImage} alt="Vizza Particle Life simulation forming a dense golden particle bloom" />
-				</figure>
-			</section>
+          <div className="hero-content">
+            <p className="eyebrow">Eine kleine collection of simulations</p>
+            <div className="hero-logo-frame">
+              <img
+                className="hero-logo-image"
+                src={steamAssets.heroLogo}
+                alt="Vizza"
+                width="1280"
+                height="720"
+              />
+            </div>
+            <h1 id="hero-title">
+              Is it a game?<br/>
+              A screensaver?<br/>
+              A psychedlic trip into a digital wonderland?<br/>
+              You decide!
+            </h1>
+            <p><sub><em>It's free so all you have to lose is your time!</em></sub></p>
+            <p className="hero-lede">
+              Pick a simulation, start from a preset, then push motion and color
+              until it works as a backdrop, clip, reference image, or just
+              something nice to leave running.
+            </p>
+            <div className="hero-actions" aria-label="Primary actions">
+              <SteamCta />
+              <a
+                className="button button-secondary"
+                href={githubUrl}
+                rel="noreferrer"
+                target="_blank"
+              >
+                View the source
+              </a>
+            </div>
+          </div>
 
-			<section className="proof-strip" aria-label="Launch highlights">
-				<div>
-					<strong>Steam</strong>
-					<span>Platform</span>
-				</div>
-				<div>
-					<strong>Soon</strong>
-					<span>Release status</span>
-				</div>
-				<div>
-					<strong>22</strong>
-					<span>Captured WebPs</span>
-				</div>
-				<div>
-					<strong>Preset</strong>
-					<span>Simulation gallery</span>
-				</div>
-			</section>
+          <div
+            className="hero-media-row"
+            aria-label="Captured Vizza screenshots"
+          >
+            {mediaHighlights.map((item) => (
+              <figure className="hero-media" key={item.src}>
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  width={item.width}
+                  height={item.height}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>{item.title}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
 
-			<section className="section section-split" id="details">
-				<div className="section-heading">
-					<p className="eyebrow">Product story</p>
-					<h2>Lead with the Steam launch moment.</h2>
-				</div>
-				<div className="detail-grid">
-					{productDetails.map((detail) => (
-						<article className="detail-card" key={detail.title}>
-							<h3>{detail.title}</h3>
-							<p>{detail.body}</p>
-						</article>
-					))}
-				</div>
-			</section>
+        <section
+          className="intro section-band"
+          id="about"
+          aria-labelledby="about-title"
+        >
+          <div className="section-heading">
+            <p className="eyebrow">What is Vizza?</p>
+            <h2 id="about-title">A place to grow pretty moving images.</h2>
+          </div>
+          <div className="intro-copy">
+            <p>
+              Vizza collects my favorite simulations into one playground. Use it
+              to create art, or just have fun exploring and messing around to
+              see what happens.
+            </p>
+            <div className="stat-row" aria-label="Vizza highlights">
+              <div>
+                <strong>Desktop</strong>
+                <span>macOS and Windows</span>
+              </div>
+              <div>
+                <strong>Presets</strong>
+                <span>jump to a look</span>
+              </div>
+              <div>
+                <strong>Color</strong>
+                <span>save the mood</span>
+              </div>
+            </div>
+          </div>
+        </section>
 
-			<section className="section gallery-section" id="gallery">
-				<div className="section-heading">
-					<p className="eyebrow">Gallery</p>
-					<h2>Captured screenshots from the current simulations.</h2>
-				</div>
-				<div className="gallery-grid">
-					{gallerySlots.map((slot) => (
-						<figure className={`gallery-item ${slot.ratio}`} key={slot.src}>
-							<img src={slot.src} alt={`${slot.label} screenshot from Vizza`} loading="lazy" />
-							<figcaption>{slot.label}</figcaption>
-						</figure>
-					))}
-				</div>
-				<div className="showcase-grid" aria-label="Additional Vizza screenshots">
-					{showcaseImages.map((image) => (
-						<figure className="showcase-item" key={image.src}>
-							<img src={image.src} alt={`${image.label} screenshot from Vizza`} loading="lazy" />
-							<figcaption>{image.label}</figcaption>
-						</figure>
-					))}
-				</div>
-			</section>
+        <section
+          className="section"
+          id="simulations"
+          aria-labelledby="simulations-title"
+        >
+          <div className="section-heading wide-heading">
+            <p className="eyebrow">Things inside</p>
+            <h2 id="simulations-title">
+              Pick the kind of image you want to make.
+            </h2>
+          </div>
+          <div className="simulation-grid">
+            {simulations.map((simulation) => (
+              <article className="simulation-card" key={simulation.name}>
+                {simulation.src ? (
+                  <img
+                    src={simulation.src}
+                    alt={simulation.alt}
+                    width="6000"
+                    height="4000"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <div
+                    className={`generated-visual ${simulation.variant ?? ""}`}
+                    aria-hidden="true"
+                  />
+                )}
+                <div>
+                  <h3>{simulation.name}</h3>
+                  <p>{simulation.body}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
 
-			<section className="section buy-section" id="buy">
-				<div className="buy-copy">
-					<p className="eyebrow">Steam</p>
-					<h2>Hold the wishlist action until the store page is live.</h2>
-					<p>
-						The button is intentionally disabled for now. Once the Steam page
-						is public, this section can switch to a live wishlist link.
-					</p>
-				</div>
+        <section
+          className="fun section-band"
+          id="fun"
+          aria-labelledby="fun-title"
+        >
+          <div className="section-heading">
+            <p className="eyebrow">A bit of fun</p>
+            <h2 id="fun-title">
+              Start with motion, then find somewhere to use it.
+            </h2>
+            <p className="fun-copy">
+              Pick a starting point, nudge one rule, watch the scene react, then
+              keep pushing until it fits the thing you are making.
+            </p>
+          </div>
+          <div className="fun-grid">
+            {funReasons.map((reason, index) => (
+              <article className="fun-card" key={reason.title}>
+                <span className="fun-index" aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3>{reason.title}</h3>
+                  <p>{reason.body}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
 
-				<div className="buy-panel" aria-label="Steam release summary">
-					<div className="mini-product">
-						<img className="mini-product-image" src={capsuleImage} alt="Vizza Particle Life screenshot thumbnail" loading="lazy" />
-					</div>
+        <section
+          className="platforms section"
+          id="support"
+          aria-labelledby="platforms-title"
+        >
+          <div className="section-heading">
+            <p className="eyebrow">For desktops</p>
+            <h2 id="platforms-title">macOS and Windows for now.</h2>
+            <p>
+              Steam starts with macOS, and Windows packages are part of the
+              current release work. I am leaving other platforms off until there
+              is a real package behind them.
+            </p>
+          </div>
+          <ul className="platform-list" aria-label="Supported app platforms">
+            {platforms.map((platform) => (
+              <li key={platform}>{platform}</li>
+            ))}
+          </ul>
+        </section>
 
-					<div className="status-pills" aria-label="Launch status">
-						{launchNotes.map((note) => (
-							<span key={note}>{note}</span>
-						))}
-					</div>
+        <section className="final-cta" aria-labelledby="final-cta-title">
+          <div>
+            <p className="eyebrow">Steam</p>
+            <h2 id="final-cta-title">
+              Check Vizza on Steam if this sounds like your kind of thing.
+            </h2>
+            <p>
+              Fair warning: Steam may redirect you until Valve publishes the
+              page.
+            </p>
+          </div>
+          <div className="final-media">
+            <img
+              className="final-capsule"
+              src={steamAssets.storeCapsuleVertical}
+              alt="Vizza vertical Steam capsule art"
+              width="748"
+              height="896"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="final-actions">
+              <SteamCta className="button-large" />
+              <a
+                className="button button-secondary"
+                href={githubUrl}
+                rel="noreferrer"
+                target="_blank"
+              >
+                View the source
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
 
-					<dl className="spec-list">
-						{specifications.map(([label, value]) => (
-							<div key={label}>
-								<dt>{label}</dt>
-								<dd>{value}</dd>
-							</div>
-						))}
-					</dl>
-
-					<button className="button button-primary button-full" type="button" disabled>
-						Coming Soon
-					</button>
-				</div>
-			</section>
-		</main>
-	);
+      <footer className="site-footer">
+        <p>Vizza</p>
+        <nav aria-label="Footer links">
+          <a href={siteUrl}>Website</a>
+          <a href={githubUrl} rel="noreferrer" target="_blank">
+            Source
+          </a>
+          <a href={steamUrl} rel="noreferrer" target="_blank">
+            Steam
+          </a>
+        </nav>
+      </footer>
+    </div>
+  );
 }
 
 export default App;

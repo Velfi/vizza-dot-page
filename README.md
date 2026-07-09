@@ -1,44 +1,20 @@
-# React + Vite + Hono + Cloudflare Workers
+# Vizza Landing Page
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/vite-react-template)
+Static React/Vite landing page for [vizza.page](https://vizza.page), deployed on Cloudflare Workers.
 
-This template provides a minimal setup for building a React application with TypeScript and Vite, designed to run on Cloudflare Workers. It features hot module replacement, ESLint integration, and the flexibility of Workers deployments.
+Vizza is a desktop collection of interactive GPU-accelerated visual simulations. The page is written as a pre-Steam landing page with a primary wishlist CTA for:
 
-![React + TypeScript + Vite + Cloudflare Workers](https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/fc7b4b62-442b-4769-641b-ad4422d74300/public)
+https://store.steampowered.com/app/4945920
 
-<!-- dash-content-start -->
+The Steam page may redirect or remain unavailable until Valve publishes it, so the page includes fallback copy that sets that expectation.
 
-🚀 Supercharge your web development with this powerful stack:
+## Stack
 
-- [**React**](https://react.dev/) - A modern UI library for building interactive interfaces
-- [**Vite**](https://vite.dev/) - Lightning-fast build tooling and development server
-- [**Hono**](https://hono.dev/) - Ultralight, modern backend framework
-- [**Cloudflare Workers**](https://developers.cloudflare.com/workers/) - Edge computing platform for global deployment
-
-### ✨ Key Features
-
-- 🔥 Hot Module Replacement (HMR) for rapid development
-- 📦 TypeScript support out of the box
-- 🛠️ ESLint configuration included
-- ⚡ Zero-config deployment to Cloudflare's global network
-- 🎯 API routes with Hono's elegant routing
-- 🔄 Full-stack development setup
-- 🔎 Built-in Observability to monitor your Worker
-
-Get started in minutes with local development or deploy directly via the Cloudflare dashboard. Perfect for building modern, performant web applications at the edge.
-
-<!-- dash-content-end -->
-
-## Getting Started
-
-To start a new project with this template, run:
-
-```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/vite-react-template
-```
-
-A live deployment of this template is available at:
-[https://react-vite-template.templates.workers.dev](https://react-vite-template.templates.workers.dev)
+- React
+- TypeScript
+- Vite
+- Hono Worker entry
+- Cloudflare Workers static assets
 
 ## Development
 
@@ -48,43 +24,46 @@ Install dependencies:
 npm install
 ```
 
-Start the development server with:
+Start the development server:
 
 ```bash
 npm run dev
 ```
 
-Your application will be available at [http://localhost:5173](http://localhost:5173).
+The site will be available at [http://localhost:5173](http://localhost:5173).
 
-## Production
+## Build And Preview
 
-Build your project for production:
+Build the production site:
 
 ```bash
 npm run build
 ```
 
-Preview your build locally:
+Preview the built site locally:
 
 ```bash
 npm run preview
 ```
 
-Deploy your project to Cloudflare Workers:
+Run TypeScript, build, and Wrangler dry-run checks:
+
+```bash
+npm run check
+```
+
+## Deployment
+
+Deployment behavior is unchanged from the Cloudflare Workers setup. Wrangler serves the Vite client build from `dist/client` with SPA fallback handling configured in `wrangler.json`.
+
+Deploy:
 
 ```bash
 npm run build && npm run deploy
 ```
 
-Monitor your workers:
+## Assets
 
-```bash
-npx wrangler tail
-```
+Page screenshots live under `public/assets/screenshots/` and are referenced directly from the React app. Gallery images are lazy-loaded and given fixed intrinsic dimensions to avoid layout shift.
 
-## Additional Resources
-
-- [Cloudflare Workers Documentation](https://developers.cloudflare.com/workers/)
-- [Vite Documentation](https://vitejs.dev/guide/)
-- [React Documentation](https://reactjs.org/)
-- [Hono Documentation](https://hono.dev/)
+The current page uses available Particle Life, Slime Mold, and Flow screenshots plus the finished Steam capsule and library artwork in `public/assets/steam/`. See `ASSET_SHOPPING_LIST.md` for remaining trailer and capture recommendations.

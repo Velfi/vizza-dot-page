@@ -1,8 +1,8 @@
 {
 	"name": "vizza-dot-page",
-	"description": "A template for building a React application with Vite, Hono, and Cloudflare Workers",
+	"description": "Pre-Steam landing page for Vizza, a desktop collection of interactive GPU-accelerated visual simulations.",
 	"cloudflare": {
-		"label": "Vite React Template",
+		"label": "Vizza Landing Page",
 		"products": [
 			"Workers"
 		],

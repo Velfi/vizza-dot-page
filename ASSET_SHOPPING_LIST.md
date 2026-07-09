@@ -8,15 +8,21 @@ https://partner.steamgames.com/doc/store/assets
 
 ## Still Needed For This Page
 
-- `vizza-logo.svg`: Vizza wordmark or logo mark.
-- `vizza-steam-capsule.webp`: Local page capsule/cover crop, 1200 x 1600 px minimum.
 - Trailer poster image or trailer embed URL for the gallery/media slot.
-- Live Steam store URL when it is available, so the disabled button can become a wishlist link.
+- Public Steam store availability for `https://store.steampowered.com/app/4945920`; the page now links to it with fallback copy because it may not resolve until Valve publishes it.
+- Captured screenshots or GIFs for Gray-Scott and Gradient Editor. Gray-Scott is intentionally skipped for now while the implementation is checked.
 
 ## Added To This Page
 
 - Particle Life WebPs from `public/assets/screenshots/particle-life-random-center-50-clean/webp/`.
 - Slime Mold preset WebPs from `public/assets/screenshots/slime-mold-presets-ui-hidden/webp/`.
+- Flow WebPs from `public/assets/screenshots/flow-field-random-noise-50-clean/webp/`.
+- Pellets WebPs from `public/assets/screenshots/pellets-random-10-clean/webp/`.
+- Voronoi Cellular Automata WebPs from `public/assets/screenshots/voronoi-ca-random-10-clean/webp/`.
+- Moiré WebPs from `public/assets/screenshots/moire-random-10-clean/webp/`.
+- Vectors WebPs from `public/assets/screenshots/vectors-random-10-clean/webp/`.
+- Primordial WebPs from `public/assets/screenshots/primordial-random-10-clean/webp/`.
+- Steam capsule, library, logo, and store background PNGs from `public/assets/steam/`.
 
 ## Steam Store Assets To Prepare
 
