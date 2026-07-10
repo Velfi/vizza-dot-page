@@ -62,13 +62,13 @@ type Simulation = {
 const simulations: Simulation[] = [
   {
     name: "Slime Mold",
-    body: "Make branching maps, fake roots, transit-diagram nonsense, and backgrounds that grow across the screen.",
+    body: "Millions of tiny agents follow trails left by their neighbors. The result looks variously like roots, transit maps, fungus, and nonsense.",
     src: `${slimeBase}/08-healthy-fungus.webp`,
     alt: "Slime Mold simulation creating green luminous clusters inside a dark web of trails",
   },
   {
     name: "Gray-Scott",
-    body: "Grow spots, stripes, bubbles, and soft organic textures.",
+    body: "A reaction-diffusion simulation that grows spots, stripes, bubbles, and other suspiciously organic textures.",
     src: `${grayScottBase}/02-gray-scott-cells.webp`,
     alt: "Gray-Scott reaction-diffusion simulation with glowing blue cell-like spots on a dark field",
     width: 3456,
@@ -76,69 +76,69 @@ const simulations: Simulation[] = [
   },
   {
     name: "Particle Life",
-    body: "Find swarms, clusters, orbiting bits, and little moving systems for ambient loops.",
+    body: "Colored particles attract and repel one another according to a small set of rules. Sometimes they form little moving creatures. Usually they form chaos.",
     src: `${particleBase}/43-particle-life-random-center.webp`,
     alt: "Particle Life simulation with dense pastel particle species moving in a dark field",
   },
   {
     name: "Flow Field",
-    body: "Paint currents, smoke trails, and motion backdrops that point somewhere.",
+    body: "Particles follow a field of directions, producing currents, vortices, smoke trails, and dense tangles of motion.",
     src: `${flowBase}/11-flow-field-random-noise.webp`,
     alt: "Flow-field simulation with purple and magenta trails curling into a vortex",
   },
   {
     name: "Pellets",
-    body: "Play with digital particles. Throw them around and watch the waves that form.",
+    body: "Digital particles you can throw around. They collide, bunch together, and make surprisingly nice waves.",
     src: `${pelletsBase}/06-pellets-random.webp`,
     alt: "Pellets simulation with dense multicolor particles scattered across a dark field",
   },
   {
     name: "Voronoi",
-    body: "Make map-like cells, stained-glass regions, and crisp animated borders.",
+    body: "A cellular automaton built on irregular Voronoi cells. It makes shifting maps, stained glass, and animated borders.",
     src: `${voronoiBase}/03-voronoi-ca-random.webp`,
     alt: "Voronoi simulation forming bright green and purple polygonal regions",
   },
   {
-    name: "Moire",
-    body: "Use layered waves for optical shimmer, interference bands, and moody moving texture.",
+    name: "Moiré",
+    body: "Layered waves interfere with one another to produce shimmer, bands, and occasionally something unpleasant to stare at.",
     src: `${moireBase}/08-moire-random.webp`,
-    alt: "Moire simulation with soft blue, green, and red interference swirls",
+    alt: "Moiré simulation with soft blue, green, and red interference swirls",
   },
   {
     name: "Vectors",
-    body: "Turn direction fields into dense line textures, sketches, and readable motion maps.",
+    body: "A direction field drawn as thousands of little lines. Useful for seeing where everything thinks it’s going.",
     src: `${vectorsBase}/08-vectors-random.webp`,
     alt: "Vector field simulation made of dense pale strokes on a dark background",
   },
   {
     name: "Primordial",
-    body: "Build clustering particle clouds, rings, swarms, and colony-like motion.",
+    body: "A particle simulation that produces clouds, rings, swarms, and colony-like things from simple rules.",
     src: `${primordialBase}/04-primordial-random.webp`,
     alt: "Primordial particle simulation forming a dense pink and yellow particle field",
   },
   {
     name: "Gradient Editor",
-    body: "Make and save color schemes you can reuse across simulations.",
+    body: "A small editor for making color gradients and reusing them across the other simulations.",
     variant: "gradient",
   },
 ];
 
 const funReasons = [
   {
-    title: "Find a backdrop",
-    body: "Make something for a second monitor, stream scene, projection, or desktop wallpaper.",
+    title: "Leave it running",
+    body: "Put it on another monitor and allow it to distract you.",
   },
   {
-    title: "Record a clip",
-    body: "When a scene lands, capture the motion instead of trying to describe it.",
+    title: "Record something",
+    body: "Capture a loop when the simulation accidentally does something nice.",
   },
   {
-    title: "Save the recipe",
-    body: "Keep the presets and palettes that work so you can come back to them later.",
+    title: "Save a preset",
+    body: "Keep the combinations you like. Random experimentation is less fun when you can never reproduce the result.",
   },
   {
-    title: "Let it run",
-    body: "Leave a screen doing something while you work, listen, think, or zone out.",
+    title: "Make a backdrop",
+    body: "Use it for a stream, projection, wallpaper, music video, or some purpose I haven’t thought of.",
   },
 ];
 
@@ -254,9 +254,10 @@ function App() {
           </div>
           <div className="intro-copy">
             <p>
-              Vizza collects my favorite simulations into one playground. Use it
-              to create art, or just have fun exploring and messing around to
-              see what happens.
+              Vizza collects my favorite simulations into one playground. I made
+              it because I like watching complicated things emerge from simple
+              rules. You can use it to create art, or just mess around and see
+              what happens.
             </p>
             <div className="stat-row" aria-label="Vizza highlights">
               <div>
@@ -283,7 +284,7 @@ function App() {
           <div className="section-heading wide-heading">
             <p className="eyebrow">Things inside</p>
             <h2 id="simulations-title">
-              Pick the kind of image you want to make.
+              Pick something interesting and start changing it.
             </h2>
           </div>
           <div className="simulation-grid">
@@ -319,13 +320,14 @@ function App() {
           aria-labelledby="fun-title"
         >
           <div className="section-heading">
-            <p className="eyebrow">A bit of fun</p>
+            <p className="eyebrow">What do you do with it?</p>
             <h2 id="fun-title">
-              Start with motion, then find somewhere to use it.
+              Mostly, you watch it do strange things.
             </h2>
             <p className="fun-copy">
-              Pick a starting point, nudge one rule, watch the scene react, then
-              keep pushing until it fits the thing you are making.
+              I mostly made Vizza because I like watching simulations. You can
+              also use the results for wallpapers, projections, videos, streams,
+              or whatever else needs some movement behind it.
             </p>
           </div>
           <div className="fun-grid">
@@ -350,11 +352,10 @@ function App() {
         >
           <div className="section-heading">
             <p className="eyebrow">For desktops</p>
-            <h2 id="platforms-title">macOS and Windows for now.</h2>
+            <h2 id="platforms-title">macOS and Windows.</h2>
             <p>
-              Steam starts with macOS, and Windows packages are part of the
-              current release work. I am leaving other platforms off until there
-              is a real package behind them.
+              Vizza currently runs on macOS and Windows. I’m leaving other
+              platforms off the list until there’s an actual build behind them.
             </p>
           </div>
           <ul className="platform-list" aria-label="Supported app platforms">
@@ -371,8 +372,7 @@ function App() {
               Check Vizza on Steam if this sounds like your kind of thing.
             </h2>
             <p>
-              Fair warning: Steam may redirect you until Valve publishes the
-              page.
+              The Steam page may redirect until Valve publishes it.
             </p>
           </div>
           <div className="final-media">

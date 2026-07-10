@@ -1,7 +1,7 @@
 {
 	"name": "Vizza",
 	"short_name": "Vizza",
-	"description": "A desktop garden for making moving wallpapers, loops, backdrops, and visual experiments.",
+	"description": "A free collection of interactive visual simulations and other pretty moving things.",
 	"icons": [
 		{
 			"src": "/icon_256.png",
