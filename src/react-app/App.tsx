@@ -1,7 +1,7 @@
 import "./App.css";
 
 const steamUrl = "https://store.steampowered.com/app/4945920";
-const githubUrl = "https://github.com/Velfi/vizza-dot-page";
+const githubUrl = "https://github.com/Velfi/VizzaOdin";
 const siteUrl = "https://vizza.page";
 
 const particleBase =
